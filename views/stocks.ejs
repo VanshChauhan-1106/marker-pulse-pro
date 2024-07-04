@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stocks</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <%- include("./includes/fontAwesome.ejs") %>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>MarketPulse - Stock Market Dashboard</h1>
+      </header>
+      <section class="search-section">
+        <form action="/stocks" method="GET">
+          <input
+            type="text"
+            id="search"
+            name="symbol"
+            placeholder="Search for stocks..."
+          />
+          <button>Search</button>
+        </form>
+        <table id="stock-table">
+          <thead>
+            <tr>
+              <th><center>Symbol</center></th>
+              <th>Stock Name</th>
+              <th>Stock Exchange</th>
+              <th><Center>Action</Center></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(stock of stocks) { %>
+            <tr>
+              <td><%= stock.symbol %></td>
+              <td><%= stock.name %></td>
+              <td><%= stock.stockExchange %></td>
+              <td><a href="/view/<%= stock.symbol %>"><button class="btn-show">Show Details</button></a></td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </section>
+      <%- include("./includes/footer.ejs") %>
+    </div>
+    <script src="/scripts/script.js"></script>
+  </body>
+</html>

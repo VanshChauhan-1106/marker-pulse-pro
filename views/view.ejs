@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Details</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <%- include("./includes/fontAwesome.ejs") %>
+  </head>
+  <body>
+    <div class="container">
+      <%- include("./includes/dashboard.ejs") %> <% let stock = stockData[0]%>
+      <div class="details-container">
+        <h1 style="text-align: center">Stock Details</h1>
+        <div class="detail"></div>
+        <div class="detail">
+          <p class="p1">
+            <span class="bold">Symbol :</span> <%= stock.symbol %>
+          </p>
+          <p class="p2">
+            <span class="bold">Exchange :</span> <%= stock.exchange %>
+          </p>
+        </div>
+        <div class="detail">
+          <p class="p1"><span class="bold">Name :</span> <%= stock.name %></p>
+          <p class="p2">
+            <span class="bold">Price :</span> <%= stock.price %> <sub>USD</sub>
+          </p>
+        </div>
+
+        <div class="detail">
+          <p class="p1">
+            <span class="bold">Changed : </span>
+            <span class="changeColor">
+              <span class="checkValue"
+                ><%= (stock.changesPercentage).toFixed(2)%>
+              </span>
+              %</span
+            >
+          </p>
+          <p class="p2">
+            <span class="bold">Change : </span>
+            <span class="changeColor">
+              <span class="checkValue"><%= (stock.change) %></span>
+              <sub>USD</sub>
+            </span>
+          </p>
+        </div>
+
+        <div class="detail">
+          <p class="p1">
+            <span class="bold">Open Price (Today) :</span> <%= stock.open %>
+            <sub>USD</sub>
+          </p>
+          <p class="p2">
+            <span class="bold">Highest Price (Today) :</span> <%= stock.dayHigh
+            %> <sub>USD</sub>
+          </p>
+        </div>
+
+        <div class="detail">
+          <p class="p1">
+            <span class="bold">Lowest Price (Today) :</span> <%= stock.dayLow %>
+            <sub>USD</sub>
+          </p>
+          <p class="p2">
+            <span class="bold">Previous Close :</span> <%= stock.previousClose
+            %> <sub>USD</sub>
+          </p>
+        </div>
+
+        <div class="detail">
+          <p class="p1">
+            <span class="bold">Market Capital : </span><%= ((stock.marketCap) /
+            100000).toFixed(2) %> Lacks
+          </p>
+          <p class="p2">
+            <span class="bold">P/E Ratio : </span> <%= stock.pe %>
+          </p>
+        </div>
+
+        <div class="detail">
+          <p class="p1">
+            <span class="bold">Volume :</span> <%= ((stock.volume) /
+            100000).toFixed(2) %> Lacks
+          </p>
+          <p class="p2">
+            <span class="bold">Avg. Volume :</span> <%= ((stock.avgVolume) /
+            100000).toFixed(2) %> Lacks
+          </p>
+        </div>
+
+        <div class="detail">
+          <p class="p1">
+            <span class="bold"
+              ><span class="bold">Price (Avg. 50) :</span></span
+            >
+            <%= stock.priceAvg50 %> <sub>USD</sub>
+          </p>
+          <p class="p2">
+            <span class="bold">Price (Avg. 200) :</span> <%=
+            (stock.priceAvg200).toFixed(2) %> <sub>USD</sub>
+          </p>
+        </div>
+
+        <div class="detail">
+          <p class="p1">
+            <span class="bold">Highest Price (Year) :</span> <%= stock.yearHigh
+            %> <sub>USD</sub>
+          </p>
+          <p class="p2">
+            <span class="bold">Lowest Price (Year) :</span> <%= stock.yearLow %>
+            <sub>USD</sub>
+          </p>
+        </div>
+
+        <div class="detail">
+          <p class="p1">
+            <span class="bold">Close at :</span> <%= new
+            Date(stock.earningsAnnouncement).toDateString() %>, <%= new
+            Date(stock.earningsAnnouncement).toTimeString() %>
+          </p>
+          <p class="p2">
+            <span class="bold">Date :</span> <%= new Date(stock.timestamp *
+            1000).toDateString()%>, <%= new Date(stock.timestamp *
+            1000).toTimeString() %>
+          </p>
+        </div>
+      </div>
+
+      <%- include("./includes/footer.ejs") %>
+    </div>
+    <script src="/scripts/script.js"></script>
+  </body>
+</html>

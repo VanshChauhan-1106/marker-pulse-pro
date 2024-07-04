@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Market Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <%- include("./includes/fontAwesome.ejs") %>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>MarketPulse - Stock Market Dashboard</h1>
+      </header>
+      <section class="search-section">
+        <form action="/stocks" method="GET">
+          <input
+            type="text"
+            id="search"
+            name="symbol"
+            placeholder="Search for stocks..."
+          />
+          <button>Search</button>
+        </form>
+        <table id="stock-table">
+          <thead>
+            <tr>
+              <th>Symbol</th>
+              <th>Stock Name</th>
+              <th>Stock Exchange</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+      <%- include("./includes/footer.ejs") %>
+    </div>
+    <script src="/scripts/script.js"></script>
+  </body>
+</html>

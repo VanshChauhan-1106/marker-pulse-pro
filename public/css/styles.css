@@ -1,0 +1,185 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.search-section {
+  margin-top: 20px;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  min-height:70vh;
+}
+
+#stock-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#stock-table th,
+#stock-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+#stock-table tr:hover {
+  background-color: #f0f2f5;
+}
+
+#stock-table th {
+  background-color: #f4f4f4;
+}
+
+#stock-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#stock-table th,
+#stock-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+#stock-table tr:hover {
+  background-color: #f0f2f5;
+}
+
+#stock-table th {
+  background-color: #f4f4f4;
+}
+
+form {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+form input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+form button:hover {
+  background-color: #d6d7da;
+}
+
+th {
+  text-align: center;
+}
+
+.btn-show {
+  background-color: rgb(170, 192, 199);
+}
+
+.btn-show:hover {
+  background-color: #333;
+  color: white;
+}
+
+/* ----------- View Page --------------- */
+
+.details-container {
+  background-color: white;
+  margin-top: 20px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.details-container .detail {
+  display: flex;
+}
+
+.details-container .detail p:hover {
+  background-color: #f0f2f5;
+}
+
+.detail p {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.details-container .detail .p1 {
+  width: 50%;
+}
+
+.details-container .detail .p2 {
+  width: 50%;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
+
+/* ----------- Footer --------------- */
+
+.footer {
+  height: 100px;
+  margin-top: 20px;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.footer .sec-1 {
+  width: 60%;
+}
+
+.footer .sec-2 {
+  width: 40%;
+}
+
+.footer .sec-2 a {
+  color: white;
+}
+
+.fa-brands {
+  margin: 0 10px;
+}
+
+.fa-brands:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
